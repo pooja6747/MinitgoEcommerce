@@ -64,10 +64,7 @@ const Login = () => {
   return (
     <>
     <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+   
       <div className="container login py-4 my-1">
         <div className="row justify-content-center">
           <div className="col-md-6">
@@ -149,7 +146,7 @@ const Login = () => {
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
+       
        
     </>
   );
