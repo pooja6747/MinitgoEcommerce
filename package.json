@@ -15,6 +15,8 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.12",
     "axios": "^1.6.5",
     "bootstrap": "^5.3.1",
+    "google-maps": "^4.3.3",
+    "google-maps-react": "^2.0.6",
     "jquery": "^3.7.1",
     "material-icons": "^1.13.12",
     "popper.js": "^1.16.1",
@@ -36,6 +38,6 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.1",
-    "vite": "^4.4.11"
+    "vite": "^4.5.2"
   }
 }

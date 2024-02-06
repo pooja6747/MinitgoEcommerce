@@ -16,7 +16,7 @@ Minitgo is a modern and user-friendly e-commerce React web application that allo
   - [License](#license)
   - [Contact](#contact)
 
-## About
+## About Minitgo
 
 Minitgo is designed to provide a hassle-free shopping experience for customers. It offers a wide range of products, organized into categories, and provides detailed product information to help users make informed purchasing decisions. Built with React, it ensures a smooth and responsive user interface.
 
