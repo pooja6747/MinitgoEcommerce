@@ -13,14 +13,17 @@ import Checkout from './pages/Checkout.jsx';
 import Feedback from './pages/Feedback.jsx';
 import Products from './pages/Products.jsx';
 import Client_register from './client/pages/Client_registre.jsx';
-
+import Clientdashboard from './client/pages/Client_dashboard.jsx';
 const App = () => {
   const location = useLocation();
 
   // Function to determine if header should be shown based on route
   const showHeader = () => {
     // Check if location pathname is not '/signin' or '/register'
-    return location.pathname !== '/signin' && location.pathname !== '/register';
+    return location.pathname !== '/signin'  && location.pathname !== '/register'
+     && location.pathname !== '/clientregister'
+     && location.pathname !== '/cdashboard'
+     ;
   };
 
   // Function to determine if footer should be shown based on route
@@ -43,6 +46,8 @@ const App = () => {
         <Route path="/clientregister" element={<Client_register />} />   
         <Route path="/cart" element={<GoogleApiWrapper />} />   
         <Route exact path="*" element={<Notfound />} />
+        <Route exact path="cdashboard" element={<Clientdashboard />} />
+
       </Routes>
    
        <Footer />

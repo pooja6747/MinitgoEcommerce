@@ -42,7 +42,7 @@ function Header() {
  )
   return (
     <>
-    <Navbar collapseOnSelect expand="lg" className=" bg-light fixed-top shadow ">
+    <Navbar collapseOnSelect expand="lg" className=" bg-light fixed-top shadow  ">
       <Container>
         <Navbar.Brand><Link to='/'><img src={Logo}style={{width:'115px'}}/></Link></Navbar.Brand>
         <div className='mobile-menu-logo d-lg-none'>

@@ -10,7 +10,7 @@ import Logo from '../../components/images/minitgo.png'
 import { IoMdSend } from "react-icons/io";
 import { IoNewspaper } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
-
+import Plainheader from './components/Plain-header';
 import Axios from 'axios';
 function Client_register(){
  
@@ -213,8 +213,8 @@ function handleagreement(){
 </Snackbar>
 
 
- 
-          <div className="container d-flex justify-content-center align-items-center vh-100" style={{marginTop:400, marginBottom:220}}>
+          <Plainheader />
+          <div className="container d-flex justify-content-center align-items-center vh-100" style={{marginTop:250, marginBottom:220}}>
         <div className="registration-form bg-white p-4 rounded shadow">
          <img className='logo-r sm-3 w-25' src={Logo}/>
          
