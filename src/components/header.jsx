@@ -14,7 +14,6 @@ import { BiCartAlt } from "react-icons/bi";
 import { BiLogIn } from "react-icons/bi";  
 import { BiMenuAltRight } from "react-icons/bi"; 
 import Catlog from  './catlog.jsx';
- 
 import Offcanvas from 'react-bootstrap/Offcanvas'; // Import Offcanvas
 function Header() {
   // State to manage the dropdown title
@@ -145,22 +144,25 @@ function Header() {
      
 
    {/* Offcanvas Sidebar */}
-   <Offcanvas show={showOffcanvas} onHide={() => setShowOffcanvas(false)} placement="end">
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Minitgo</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          {/* Sidebar content goes here */}
-          <Nav className="flex-column">
-            <Nav.Link>Create an account</Nav.Link>
-            <Nav.Link>Login</Nav.Link>
-            <Nav.Link>Minit-Pay</Nav.Link>
-            <Nav.Link>Address change</Nav.Link>
-            <Nav.Link>Settings</Nav.Link>
-          </Nav>
-        </Offcanvas.Body>
-      </Offcanvas>
-      
+ 
+
+<Offcanvas show={showOffcanvas} onHide={() => setShowOffcanvas(false)} placement="end">
+  <Offcanvas.Header closeButton>
+    <Offcanvas.Title>Minitgo</Offcanvas.Title>
+  </Offcanvas.Header>
+  <Offcanvas.Body>
+    {/* Sidebar content goes here */}
+    <Nav className="flex-column">
+      <Link to="/about" className="nav-link">About</Link>
+      <Link to="/" className="nav-link">Create an account</Link>
+      <Link to="/" className="nav-link">Login</Link>
+      <Link to="/" className="nav-link">Minit-Pay</Link>
+      <Link to="/" className="nav-link">Address change</Link>
+      <Link to="/" className="nav-link">Home</Link>
+    </Nav>
+  </Offcanvas.Body>
+</Offcanvas>
+
 
       
     </>

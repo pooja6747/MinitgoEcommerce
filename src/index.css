@@ -658,7 +658,42 @@ border: none;
 }
 }
 
+.floating-card {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  height: 330px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, hsl(0, 93%, 78%), #1b29bb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.header {
+  padding: 10px;
+}
+
+.progress-bar {
+  width: 90%;
+  height: 10px;
+  background-color: #d69d9d;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.timer span {
+  margin: 0 5px;
+}
 
 
 

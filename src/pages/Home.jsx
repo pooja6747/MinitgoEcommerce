@@ -6,6 +6,7 @@ import Trending from "../components/Trending-prducts";
  
 
 export default function Home() {
+ 
   return (
     <>
        
@@ -14,7 +15,7 @@ export default function Home() {
       <HomeProducts/>
       <DiscountProduct />
       <Slider />
-      <Trending />   
+     <Trending />
        
        
     </>

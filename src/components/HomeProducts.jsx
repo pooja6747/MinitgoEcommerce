@@ -1,12 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { BiInfoCircle } from "react-icons/bi";
 import { FaStore } from "react-icons/fa6";  
 import { BiSolidCategory } from "react-icons/bi";  
 import { FaLocationDot } from "react-icons/fa6"; 
-
+import $ from 'jquery'; // Import jQuery
 import Ban from './images/product.png'
+ 
 const HomeProducts = () => {
+    
+    useEffect(() => {
+        const recordVisit = () => {
+            var visits = {
+                url: window.location.href,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent
+            };
+
+            $.ajax({
+                url: 'http://localhost/minitgo/clientdashboard/api/live_traffic.php',
+                type: 'post',
+                data: visits,
+                success: function(data, status) {
+                    console.log("Inserted visit");
+                },
+                
+            });
+        };
+
+        recordVisit();
+    }, []);
 return(
 <>
 <div class="container">
@@ -52,17 +75,22 @@ return(
 
                         <select class="form-control rounded-pill" id="distanceFilter">
                             <option value="">All</option>
-                            <option value="5 miles">5 miles</option>
-                            <option value="10 miles">10 miles</option>
+                            <option value="5 miles">5 Km</option>
+                            <option value="10 miles">10 km</option>
+                            <option value="10 miles">15 km</option>
+                            <option value="10 miles">20+ km</option>
+                            <option value="Null"> </option>
                             
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="priceFilter">Set Price</label>
-                        <select class="form-control rounded-pill" id="priceFilter">
+                        <select class="form-control rounded-pill " id="priceFilter">
                             <option value="">All</option>
-                            <option value="$10.99">$10.99</option>
-                            <option value="$19.99">$19.99</option>
+                            <option value="$10.99">Below: 500</option>
+                            <option value="$19.99">500 - 1000</option>
+                            <option value="$19.99" >5000 - 10000</option>
+                            <option value="Null" > </option>
                        
                         </select>
                     </div>

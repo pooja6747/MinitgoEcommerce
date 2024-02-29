@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-import Logo from '../../components/images/minitgo.png'
+import ClientImg from '../../components/images/clientregisterimg.jpg'
 import { IoMdSend } from "react-icons/io";
 import { IoNewspaper } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
@@ -133,7 +133,7 @@ function handleagreement(){
         ifsc:ifsc,
         upi:upi,
         agreement:agreement,
-        profilepic:profilepic
+         
 
        }).then((response)=> {
         
@@ -213,17 +213,18 @@ function handleagreement(){
 </Snackbar>
 
 
-          <Plainheader />
-          <div className="container d-flex justify-content-center align-items-center vh-100" style={{marginTop:250, marginBottom:220}}>
-        <div className="registration-form bg-white p-4 rounded shadow">
-         <img className='logo-r sm-3 w-25' src={Logo}/>
+        
+          
+          <div className="container d-flex justify-content-center align-items-center vh-100 bg-secondary rounded" style={{marginTop:310, marginBottom:280, backgroundImage: "url('https://image.lexica.art/full_webp/61254098-8c8a-4e1f-8c53-6f1e1bce35ec')", backgroundSize: "cover"}}>
+        <div className="registration-form bg-white p-4 rounded  border">
+         <img className='logo-r sm-3 rounded'  src={ClientImg} style={{width:'100%', height:150}} alt="client Ad image" />
          
          <Row className="mb-3">
          <Col>
-         <h5>Create new account</h5>
-         
+         <h5 className='  fs-1 text-info text-center my-2'>Become our partner!.. </h5>
+                  <p style={{fontSize:12.5}} className='text-center text-secondary'>"Join minitgo", be a part of today's trend's.</p>
                 </Col>
-                <Col>
+             {/*   <Col>
                 <Form.Group controlId="profile">
                 <Form.Label>Profile Pic</Form.Label>
                 <Form.Control
@@ -234,7 +235,7 @@ function handleagreement(){
                     required
                   /></Form.Group>
 
-                </Col>
+                </Col> */}
          </Row>
           <Form onSubmit={handleSubmit}>
             <Row className="mb-3">
@@ -306,8 +307,8 @@ function handleagreement(){
                   />
                 </Col>
                 <Col>
-                  <Button variant="outlined" onClick={handleUseCurrentLocation} disabled={coordinates}>
-                    Get Current Location
+                  <Button variant="contained" onClick={handleUseCurrentLocation} disabled={coordinates}>
+                    Get Location
                   </Button>
                 </Col>
                 
@@ -475,7 +476,7 @@ function handleagreement(){
             <Row>
               <Col>
               <div className='py-3'>
-      <Button onClick={handleOpen} disabled={agreementstatus} variant='outlined' endIcon={<IoNewspaper/>}>Terms & Conditions / Agreement</Button>
+      <Button onClick={handleOpen} disabled={agreementstatus} variant='contained' endIcon={<IoNewspaper/>}>Terms & Conditions / Agreement</Button>
      
       <Modal
         open={open}
@@ -484,18 +485,69 @@ function handleagreement(){
         aria-describedby="modal-modal-description"
         
       >
-        <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+        <Box className="border rounded shadow" sx={style}>
+          <Typography id="modal-modal-title" variant="h5" component="h1">
             Terms & Conditions
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-             1.Accpect the Replace and Returns on time.
-             2.Should not delay the order over the time.
-             3.shoujnjnnnjnjn
+          <hr></hr>
+          <section style={{ maxHeight: '400px', overflowY: 'auto' }}>
+        <h2>1. Introduction</h2>
+        <p>Welcome to MinitGo, an e-commerce platform connecting customers with local shopkeepers for convenient shopping and delivery services. By registering with MinitGo and using our platform, you agree to abide by these terms and conditions.</p>
 
-          </Typography>
+        <h2>2. Registration and Account</h2>
+        <p>2.1. Shopkeepers must register with MinitGo to create an account and list their products on the platform.</p>
+        <p>2.2. Shopkeepers are responsible for providing accurate and up-to-date information during the registration process.</p>
+        <p>2.3. MinitGo reserves the right to verify the identity and credentials of shopkeepers and may suspend or terminate accounts with incomplete or false information.</p>
+
+        <h2>3. Product Listings</h2>
+        <p>3.1. Shopkeepers must accurately describe their products, including images, pricing, and availability.</p>
+        <p>3.2. Prohibited items include counterfeit goods, illegal substances, and products infringing on intellectual property rights.</p>
+        <p>3.3. MinitGo reserves the right to remove or suspend listings that violate these terms.</p>
+
+        <h2>4. Order Processing and Fulfillment</h2>
+        <p>4.1. Shopkeepers are responsible for processing orders promptly and fulfilling them within the agreed-upon timeframe.</p>
+        <p>4.2. MinitGo facilitates payment processing but is not responsible for order fulfillment or product quality.</p>
+        <p>4.3. Shopkeepers must address customer inquiries and complaints in a timely and professional manner.</p>
+
+        <h2>5. Delivery and Logistics</h2>
+        <p>5.1. MinitGo coordinates delivery logistics using third-party services or in-house delivery teams.</p>
+        <p>5.2. Delivery times and costs vary depending on the location and size of the order.</p>
+        <p>5.3. MinitGo is not liable for delays, damages, or losses during the delivery process.</p>
+
+        <h2>6. Fees and Payments</h2>
+        <p>6.1. MinitGo may charge shopkeepers transaction fees or subscription fees for using the platform.</p>
+        <p>6.2. Shopkeepers agree to pay all applicable fees and taxes associated with their transactions.</p>
+        <p>6.3. Payment disbursement schedules and methods are determined by MinitGo.</p>
+
+        <h2>7. Intellectual Property Rights</h2>
+        <p>7.1. Shopkeepers retain ownership of their intellectual property rights, including trademarks and copyrights.</p>
+        <p>7.2. Shopkeepers must respect the intellectual property rights of others and refrain from infringing on third-party rights.</p>
+        <p>7.3. MinitGo reserves the right to remove infringing content from the platform.</p>
+
+        <h2>8. Privacy and Data Protection</h2>
+        <p>8.1. MinitGo collects and uses personal information in accordance with its Privacy Policy.</p>
+        <p>8.2. Shopkeepers agree to comply with data protection laws and regulations when handling customer data.</p>
+        <p>8.3. MinitGo employs security measures to protect the confidentiality and integrity of user information.</p>
+
+        <h2>9. Liability and Dispute Resolution</h2>
+        <p>9.1. MinitGo's liability is limited to the extent permitted by law and excludes consequential damages.</p>
+        <p>9.2. Disputes between shopkeepers and customers are subject to mediation or arbitration as outlined in our Dispute Resolution Policy.</p>
+        <p>9.3. MinitGo reserves the right to take appropriate legal action against shopkeepers engaging in fraudulent or unlawful activities.</p>
+
+        <h2>10. Termination and Suspension</h2>
+        <p>10.1. MinitGo may suspend or terminate shopkeeper accounts for violations of these terms and conditions.</p>
+        <p>10.2. Shopkeepers have the right to appeal account suspensions or terminations within a specified timeframe.</p>
+        <p>10.3. Upon termination, shopkeepers must cease using the platform and remove their listings.</p>
+
+        <h2>11. Miscellaneous Provisions</h2>
+        <p>11.1. These terms and conditions constitute the entire agreement between MinitGo and shopkeepers and supersede any prior agreements.</p>
+        <p>11.2. Any modifications to these terms must be agreed upon in writing by both parties.</p>
+        <p>11.3. These terms shall be governed by and construed in accordance with the laws of [Jurisdiction], without regard to conflicts of law principles.</p>
+    </section>
+
           <br></br>
-          <Button variant='contained' onClick={handleagreement}>I Agree</Button> <br></br><br></br>
+          <hr></hr>
+          <Button variant='contained' onClick={handleagreement}>I Agree</Button><p className='text-muted py-2' style={{fontSize:12.5}}>I agree all the terms & conditions mentioned above</p>  
            
         </Box>
       </Modal>

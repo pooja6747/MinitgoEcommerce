@@ -20,14 +20,15 @@ const App = () => {
   // Function to determine if header should be shown based on route
   const showHeader = () => {
     // Check if location pathname is not '/signin' or '/register'
-    return location.pathname !== '/signin'  && location.pathname !== '/register'
-     && location.pathname !== '/clientregister'
-     && location.pathname !== '/cdashboard'
-     ;
+    return location.pathname !== '/signin'  && location.pathname !== '/register' && location.pathname !== '/cdashboard' && location.pathname !== '/clientregister'
+     
   };
 
   // Function to determine if footer should be shown based on route
- 
+  const showFooter = () => {
+  
+     return location.pathname !== '/cdashboard';
+  };
 
   return (
     <>
@@ -46,11 +47,11 @@ const App = () => {
         <Route path="/clientregister" element={<Client_register />} />   
         <Route path="/cart" element={<GoogleApiWrapper />} />   
         <Route exact path="*" element={<Notfound />} />
-        <Route exact path="cdashboard" element={<Clientdashboard />} />
+        <Route exact path="/cdashboard" element={<Clientdashboard />} />
 
       </Routes>
    
-       <Footer />
+       {showFooter() && <Footer />}
     </>
   );
 };
