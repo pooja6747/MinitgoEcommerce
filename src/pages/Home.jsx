@@ -2,8 +2,8 @@
 import HomeProducts from "../components/HomeProducts";
 import DiscountProduct from "../components/DiscountProduct";
 import Slider from "../components/Addslider";
-import Trending from "../components/Trending-prducts";
- 
+import Carousel from "../components/carousel";
+
 
 export default function Home() {
  
@@ -15,7 +15,7 @@ export default function Home() {
       <HomeProducts/>
       <DiscountProduct />
       <Slider />
-     <Trending />
+     <Carousel/>
        
        
     </>
@@ -23,6 +23,7 @@ export default function Home() {
 }
 
  
+
 
 
       

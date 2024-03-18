@@ -20,6 +20,7 @@ const DiscountProduct = () => {
     <br></br>
    <div class="container">
     <h3>Today Deal's<MdLocalOffer className='fs-2 p-1'/></h3>
+    <p style={{fontSize:13.5}}>Best deal from our sellers</p>
   <div class="row">
     <div class=" col-md-3 ">
       <div class="best-cat">

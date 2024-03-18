@@ -112,7 +112,7 @@ function Header() {
                
               </NavDropdown.Item>
               <NavDropdown.Item>
-              <Link to="/register" className='text-decoration-none '> Settings  </Link>
+              <Link to="/profile" className='text-decoration-none '> Profile  </Link>
                  
               </NavDropdown.Item>
             </NavDropdown>

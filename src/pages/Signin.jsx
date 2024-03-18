@@ -36,6 +36,8 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
   const [showResetModal, setShowResetModal] = useState(false);
   const [resetEmail, setResetEmail] = useState('');
+  const [userid, setUserID] = useState('');
+  const [password, setPassword]= useState('');
 
   const handleRememberMeChange = (event) => {
     setRememberMe(event.target.checked);
@@ -61,6 +63,14 @@ const Login = () => {
     setResetEmail('');
   };
 
+ function handleSubmit(e){
+  e.preventDefault();
+  console.log(userid);
+  console.log(password);
+ 
+}
+   
+
   return (
     <>
     <br></br>
@@ -79,13 +89,13 @@ const Login = () => {
                   <div className="form-group">
                   <h5>Login</h5>
                     <label htmlFor="email">Email or Phone</label>
-                    <input type="email" className="form-control" id="email" placeholder="Enter email or phone" />
+                    <input type="email" className="form-control" id="email" onChange={(e) => setUserID(e.target.value)} placeholder="Enter email or phone" />
                   </div>
                   <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="password" className="form-control" id="password" placeholder="Password" />
+                    <input type="password" className="form-control" id="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
                   </div>
-                  <div className="form-check c-box">
+                  <div className="form-check c-box"> 
                     <input
                       type="checkbox"
                       className="form-check-input "
@@ -96,8 +106,8 @@ const Login = () => {
                     <label className="form-check-label" htmlFor="rememberMe">
                       Keep me logged in
                     </label>
-                  </div>
-                  <button type="submit" className="btn btn-primary btn-l">
+                  </div> 
+                  <button type="submit" className="btn btn-primary btn-l" onClick={handleSubmit}>
                     Login
                   </button>
                   <a href="#" onClick={handleForgotPassword} className="forgot-password-link">
@@ -105,7 +115,7 @@ const Login = () => {
                   </a>
                   <a href="/register" className="forgot-password-link">
                     Create an Account!
-                  </a>
+                  </a> 
                 </form>
               </div>
             </div>

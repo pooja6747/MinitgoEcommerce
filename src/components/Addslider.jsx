@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 const Slider = () => {
    
   return (
+    <>
     <Container className='add-container'>
     <p className='p-2'>Sponsored <BiInfoCircle className='fa-1'/></p>
     <Row>
@@ -21,8 +22,10 @@ const Slider = () => {
         </Link>
       </Row>
   </Container>
- 
-  
+ <hr></hr>
+ <br></br>
+ <br></br>
+ </>
   );
 };
 

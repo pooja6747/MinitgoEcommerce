@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react';
-import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+import { Container, Row, Col, Button, Form, Card } from 'react-bootstrap';
 import { BiInfoCircle } from "react-icons/bi";
 import { FaStore } from "react-icons/fa6";  
 import { BiSolidCategory } from "react-icons/bi";  
@@ -8,32 +8,68 @@ import $ from 'jquery'; // Import jQuery
 import Ban from './images/product.png'
  
 const HomeProducts = () => {
-    
-    useEffect(() => {
-        const recordVisit = () => {
-            var visits = {
-                url: window.location.href,
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent
-            };
 
-            $.ajax({
-                url: 'http://localhost/minitgo/clientdashboard/api/live_traffic.php',
-                type: 'post',
-                data: visits,
-                success: function(data, status) {
-                    console.log("Inserted visit");
-                },
-                
-            });
-        };
+    const [coordinates, setCoordinates] = useState('');
 
-        recordVisit();
-    }, []);
+useEffect(() => {
+  handleUseCurrentLocation();
+}, []);
+
+const handleUseCurrentLocation = () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const { latitude, longitude } = position.coords;
+
+        // Google Maps URL
+        const googleMapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+
+        // Consoling the URL link
+        console.log(googleMapsUrl);
+
+        // Set coordinates state
+        setCoordinates(googleMapsUrl);
+      },
+      (error) => {
+        console.log('Geolocation error:', error);
+      }
+    );
+  } else {
+    console.log('Geolocation is not supported by this browser.');
+  }
+};
+
+useEffect(() => {
+  if (coordinates !== '') { // Check if coordinates are not empty
+    const recordVisit = () => {
+      var visits = {
+        url: window.location.href,
+        timestamp: new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }),
+        userAgent: navigator.userAgent,
+        location: coordinates
+      };
+
+      $.ajax({
+        url: 'https://minitgo.com/api/live_traffic.php',
+        type: 'post',
+        data: visits,
+        success: function(data, status) {
+          console.log(visits);
+        },
+      });
+    };
+
+    recordVisit();
+  }
+}, [coordinates]); // Run the effect whenever coordinates change
 return(
 <>
+ 
+             
 <div class="container">
     <h3> <BiSolidCategory className='fs-2 p-1'/>Top Category's</h3>
+    <p className = "px-2" style={{fontSize:13.5}}>Explore our top category's</p>
+
   <div class="row">
     <div class="col-6 col-md-3">
       <div class="subs-cat">
@@ -63,7 +99,9 @@ return(
 </div>
 <br></br>
 <div class="container">
-        <h3><FaLocationDot className='fs-2 p-1'/>Nearby You </h3>
+        <h3><FaLocationDot className='fs-2 p-1'/>Nearby</h3>
+    <p className = "px-2" style={{fontSize:13.5}}>Increase distance for more products! </p>
+
         <div class="row">
            
             <div class="col-md-2 filter-s ">

@@ -14,6 +14,12 @@ import Feedback from './pages/Feedback.jsx';
 import Products from './pages/Products.jsx';
 import Client_register from './client/pages/Client_registre.jsx';
 import Clientdashboard from './client/pages/Client_dashboard.jsx';
+import ContactUs from  './pages/ContactUs.jsx'; 
+import Blog from './pages/blog.jsx';
+import Profile from './components/profile.jsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 const App = () => {
   const location = useLocation();
 
@@ -48,6 +54,9 @@ const App = () => {
         <Route path="/cart" element={<GoogleApiWrapper />} />   
         <Route exact path="*" element={<Notfound />} />
         <Route exact path="/cdashboard" element={<Clientdashboard />} />
+        <Route exact path="/contact" element={<ContactUs />} />
+        <Route exact path="/blog" element={<Blog />} />
+        <Route exact path="/profile" element={<Profile />} />
 
       </Routes>
    
