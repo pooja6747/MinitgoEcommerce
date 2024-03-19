@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+/* card.jsx */
+.card-item{
+  box-shadow: 2px 1px rgb(221, 220, 220);
+}
+
+.title{
+  background: rgb(232, 229, 229);
+}
+
+.green-shirt{
+  height: 8rem !important;
+  width: 9rem !important;
+}
+
+.minus {
+  border: 1px solid gray;
+background: rgb(202, 242, 124) !important;
+cursor: pointer;
+}
+
+.plus{
+  border: 1px solid gray;
+  background: rgb(202, 242, 124) !important;
+  cursor: pointer;
+}
+
+.bg-red{
+  background-color: red;
+}
+
+.checkoutBtn{
+  background: rgb(202, 242, 124) !important;
+}
+
+.img-icons{
+  width: 2rem;
+  height: 2rem;
+}
